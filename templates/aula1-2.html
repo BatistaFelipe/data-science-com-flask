@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AULA 1-2</title>
+</head>
+<body>
+	<ul>
+		<a href="/aula1"><li>Voltar</li></a>
+	</ul>
+	<br>
+
+	<form action="/aula1/aula1-2" method="POST">
+		<label for="filmeId">Digite o ID do Filme:</label><br>
+		<input type="text" id="filmeId" name="filmeId" placeholder="1"><br>
+		<input type="submit" value="Submit">
+	</form> 
+	<br>
+
+	<h2>FilmeID: {{filmeId}}</h2>
+	<h2>Média (nota): {{media_nota_pesquisa}}</h2>
+		
+	{% for table in table_avaliacoes %}
+		<h3>{{name_avaliacoes}}</h3>
+		{{titles_avaliacoes[loop.index]}}
+		{{ table|safe }}
+	{% endfor %}
+	
+	<br />
+
+	{% for table in table_describe_avaliacoes %}
+		<h3>{{name_describe_avaliacoes}}</h3>
+		{{titles_describe_avaliacoes[loop.index]}}
+		{{ table|safe }}
+	{% endfor %}
+
+	<br />
+	<!-- <img src="{{plot}}" alt="my plot"> -->
+</body>
+</html>

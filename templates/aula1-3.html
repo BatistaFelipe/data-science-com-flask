@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AULA 1-3</title>
+</head>
+<body>
+	<ul>
+		<a href="/aula1"><li>Voltar</li></a>
+	</ul>
+	<br>
+	{% for table in table_medias_sort %}
+		<h3>{{name_medias_sort}}</h3>
+		{{title_medias_sort[loop.index]}}
+		{{ table|safe }}
+	{% endfor %}
+</body>
+</html>
